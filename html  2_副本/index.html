@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYSTEM DESIGN - 3*3 Grid</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="image-container">
+                <img src="images/system-01.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-01.png" class="img-green" alt="green Icon">
+            </div>
+        </div>
+        <div class="card">
+            <div class="image-container">
+                <img src="images/system-02.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-02.png" class="img-green" alt="green Icon">
+            </div>
+        </div><div class="card">
+            <div class="image-container">
+                <img src="images/system-03.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-03.png" class="img-green" alt="green Icon">
+            </div>
+        </div><div class="card">
+            <div class="image-container">
+                <img src="images/system-04.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-04.png" class="img-green" alt="green Icon">
+            </div>
+        </div><div class="card">
+            <div class="image-container">
+                <img src="images/system-05.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-05.png" class="img-green" alt="green Icon">
+            </div>
+        </div><div class="card">
+            <div class="image-container">
+                <img src="images/system-06.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-06.png" class="img-green" alt="green Icon">
+            </div>
+        </div><div class="card">
+            <div class="image-container">
+                <img src="images/system-07.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-07.png" class="img-green" alt="green Icon">
+            </div>
+        </div><div class="card">
+            <div class="image-container">
+                <img src="images/system-08.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-08.png" class="img-green" alt="green Icon">
+            </div>
+        </div><div class="card">
+            <div class="image-container">
+                <img src="images/system-09.png" class="img-orginal" alt="white Icon">
+                <img src="shine images/shine system-09.png" class="img-green" alt="green Icon">
+            </div>
+        </div>
+    </div>
+    <script>
+        const audioPlayer = new Audio();
+        audioPlayer. loop = true;
+        audioPlayer. volume = 0.3;
+        const cards = document.querySelectorAll('.card');
+        cards.forEach((card, index) =>{
+            const soundIndex = (index + 1).toString().padStart(2, '0');
+            const soundPath = `audio/audio-${soundIndex}.mp3`;
+            card.addEventListener('mouseenter',() => {
+                audioPlayer.src = soundPath;
+                audioPlayer.play().catch(e => {
+                    console.log("Hint Please click anywhere on the page to activate the audio playback function.");
+                });
+            });
+            card.addEventListener('mouseleave', () => {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+            });
+        });
+    </script>
+        
+</body>
+</html>
